@@ -1,15 +1,15 @@
 function y = myFunc(x)
 %% Function Name: myFunc
 %
-% Description: Polynom to test newton function
+% Description: polynom to test newton function
 %
-% Assumptions: None
+% Assumptions: none
 %
 % Inputs:
 %    x - location to calculate the value of myFunc
 %
 % Outputs:
-%    y - Value of polynom
+%    y - result of polynom
 %
 % $Revision: R2022a$
 % $Author: Victoria Strobel$
@@ -20,3 +20,4 @@ function y = myFunc(x)
 y = (x-3)^2;
 
 end
+%------------- END OF CODE --------------

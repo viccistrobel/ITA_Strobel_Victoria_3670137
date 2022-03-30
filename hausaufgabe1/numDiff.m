@@ -1,39 +1,43 @@
-function dfunc = numDiff(func, x, Method)
+function dfunc = numDiff(func, x, method)
 %% Function Name: numDiff
 %
-% Description: Function that calculates the derivative of a function
+% Description: function that calculates the analytical derivative of a
+% function for a value x
 %
-% Assumptions: None
+% Assumptions: none
 %
 % Inputs:
-%    func - Polynom
-%    x - Location to calculate the analytical derivative of func
-%    Method - Method that is used to calculate the derivative
+%    func - polynom
+%    x - location to calculate the analytical derivative of func
+%    method - method that is used to calculate the derivative: 
+%               1: forwards
+%               2: backwards
+%               3: central
 %
 % Outputs:
-%    dfunc - Derivative of polynom
+%    dfunc - derivative of polynom for value x
 %
 % $Revision: R2022a$
 % $Author: Victoria Strobel$
 % $Date: March 30, 2022$
 %
 %%------------- BEGIN CODE --------------
-    switch (Method)
-        % forward
-        case 1
-            h = 10.^-8;
-            dfunc = (func(x+h) - func(x)) / h;
-        % backwards
-        case 2
-            h = 10.^-8;
-            dfunc = (func(x) - func(x-h)) / h;
-        % central
-        case 3
-            h = 10.^-6;
-            dfunc = (func(x+h) - func(x-h)) / (2*h);
-        % error handling
-        otherwise
-            error('Invalid Method');
-    end 
+switch (method)
+    % forward
+    case 1
+        h = 10.^-8;
+        dfunc = (func(x+h) - func(x)) / h;
+    % backwards
+    case 2
+        h = 10.^-8;
+        dfunc = (func(x) - func(x-h)) / h;
+    % central
+    case 3
+        h = 10.^-6;
+        dfunc = (func(x+h) - func(x-h)) / (2*h);
+    % error handling
+    otherwise
+        error('Invalid method');
+end 
 end
 %------------- END OF CODE --------------

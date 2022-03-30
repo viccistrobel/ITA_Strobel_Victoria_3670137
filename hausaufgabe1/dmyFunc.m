@@ -1,7 +1,7 @@
 function dy = dmyFunc(x)
 %% Function Name: dmyFunc
 %
-% Description: Derivative of polynom to test newton function
+% Description: derivative of polynom to test newton function
 %
 % Assumptions: None
 %
@@ -9,7 +9,7 @@ function dy = dmyFunc(x)
 %    x - location to calculate the analytical derivative of dmyFunc
 %
 % Outputs:
-%    dy - Derivative of polynom
+%    dy - derivative of polynom
 %
 % $Revision: R2022a$
 % $Author: Victoria Strobel$

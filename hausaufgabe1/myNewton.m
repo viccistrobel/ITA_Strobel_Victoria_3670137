@@ -1,4 +1,22 @@
 function [xZero, abortFlag, iters] = myNewton(varargin)
+%% Function Name: myNewton
+%
+% Description: 
+%
+% Assumptions: none
+%
+% Inputs:
+%    varargin
+%
+% Outputs:
+%    
+%
+% $Revision: R2022a$
+% $Author: Victoria Strobel$
+% $Date: March 30, 2022$
+%
+%%------------- BEGIN CODE --------------
+
 %% do the varargin
 for i = 1:nargin
     if strcmp(varargin{i},'function')
