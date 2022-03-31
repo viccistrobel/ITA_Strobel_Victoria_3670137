@@ -10,9 +10,9 @@ function dfunc = numDiff(func, x, method)
 %    func - polynom
 %    x - location to calculate the analytical derivative of func
 %    method - method that is used to calculate the derivative: 
-%               1: forwards
-%               2: backwards
-%               3: central
+%               1: Forward
+%               2: Backwards
+%               3: Central
 %
 % Outputs:
 %    dfunc - derivative of polynom for value x
@@ -35,7 +35,7 @@ switch (method)
     case 3
         h = 10.^-6;
         dfunc = (func(x+h) - func(x-h)) / (2*h);
-    % error handling
+    % invalid method
     otherwise
         error('Invalid method');
 end 

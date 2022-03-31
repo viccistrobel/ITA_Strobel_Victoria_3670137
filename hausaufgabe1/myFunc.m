@@ -9,7 +9,7 @@ function y = myFunc(x)
 %    x - location to calculate the value of myFunc
 %
 % Outputs:
-%    y - result of polynom
+%    y - result of polynom for x
 %
 % $Revision: R2022a$
 % $Author: Victoria Strobel$

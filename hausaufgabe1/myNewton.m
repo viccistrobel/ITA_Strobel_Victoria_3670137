@@ -1,15 +1,13 @@
 function [xZero, abortFlag, iters] = myNewton(varargin)
 %% Function Name: myNewton
 %
-% Description: 
+% Description: function that performs the newton algorithm on a function
 %
 % Assumptions: none
 %
 % Inputs:
-%    varargin
-%
-% Outputs:
-%    
+%    varargin - varagin contains the function plus additional data for the
+%               newton algorithm
 %
 % $Revision: R2022a$
 % $Author: Victoria Strobel$
@@ -41,8 +39,10 @@ if ~exist('func','var')
     error('No valid function');
 end
 
+% check the derivation method 
 if ~exist('dfunc','var')
-    method = questdlg('Choose a method to calculate the analytical derivative of your polynom:', ...
+    method = questdlg(['Choose a method to calculate the analytical ' ...
+        'derivative of your polynom:'], ...
 	'Method Menu', ...
 	'Forward','Backwards','Central','Central');
 

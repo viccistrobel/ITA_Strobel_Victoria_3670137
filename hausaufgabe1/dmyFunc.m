@@ -3,13 +3,13 @@ function dy = dmyFunc(x)
 %
 % Description: derivative of polynom to test newton function
 %
-% Assumptions: None
+% Assumptions: none
 %
 % Inputs:
-%    x - location to calculate the analytical derivative of dmyFunc
+%    x - location to calculate the analytical derivative of myFunc
 %
 % Outputs:
-%    dy - derivative of polynom
+%    dy - result of derivation for x
 %
 % $Revision: R2022a$
 % $Author: Victoria Strobel$
@@ -17,7 +17,7 @@ function dy = dmyFunc(x)
 %
 %%------------- BEGIN CODE --------------
 
-dy = 2* (x-3);
+dy = 2*(x-3);
 
 end
 %------------- END OF CODE --------------
