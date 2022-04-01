@@ -1,6 +1,6 @@
 %% File Name: runMyNewton
 %
-% Description: file that runs the myNewton function with different data
+% Description: file that runs the myNewton function with different test data
 %
 % Assumptions: none
 %
