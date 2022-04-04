@@ -22,6 +22,7 @@ function dfunc = numDiff(func, x, method)
 % $Date: March 30, 2022$
 %
 %%------------- BEGIN CODE --------------
+
 switch (method)
     % forward
     case 1

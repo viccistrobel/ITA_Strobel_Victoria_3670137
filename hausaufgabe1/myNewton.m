@@ -56,7 +56,6 @@ if ~exist('dfunc','var')
         otherwise
             error('Invalid Method');
     end
-
 end  
 if ~exist('x0','var')
     x0 = 0;
@@ -137,3 +136,4 @@ end
 iters = i;
 xZero = xNew;
 end
+%------------- END OF CODE --------------
