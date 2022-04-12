@@ -80,7 +80,7 @@ classdef LinearRegressionModel < matlab.mixin.SetGet
 
             for i=1:length(theta1_vals)
                 for k=1:length(theta0_vals)
-                    obj.setTheta(theta0_vals(i), theta1_vals(k))
+                    obj.setTheta(theta0_vals(k), theta1_vals(i))
                     Z(i,k) = obj.costFunction;
                 end
             end
