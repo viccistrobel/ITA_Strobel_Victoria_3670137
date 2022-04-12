@@ -45,7 +45,7 @@ classdef LinearRegressionModel < matlab.mixin.SetGet
             %   J - Cost value
             %
             m = obj.trainingData.numOfSamples; 
-            J = (1 / (2 * m)) * sum(( obj.hypothesis - obj.trainingData.commandVar ).^2);
+            J = (1 / (2 * m)) * sum((obj.hypothesis - obj.trainingData.commandVar).^2);
         end
         
         function hValue = hypothesis(obj)
@@ -58,7 +58,7 @@ classdef LinearRegressionModel < matlab.mixin.SetGet
             %   J - Hypothesis values
             %
             X = [ones(obj.trainingData.numOfSamples,1) obj.trainingData.feature];
-            hValue = X * [obj.theta(1); obj.theta(2)];
+            hValue = X * obj.theta;
         end
         
         function h = showOptimumInContour(obj)
@@ -76,13 +76,11 @@ classdef LinearRegressionModel < matlab.mixin.SetGet
             theta1_vals = linspace(0, 2, 100);
 
             [X,Y] = meshgrid(theta0_vals, theta1_vals);
-
-            Z = ones(length(theta0_vals), length(theta1_vals));
+            Z = ones(length(theta1_vals), length(theta0_vals));
 
             for i=1:length(theta1_vals)
                 for k=1:length(theta0_vals)
                     obj.setTheta(theta0_vals(i), theta1_vals(k))
-                    
                     Z(i,k) = obj.costFunction;
                 end
             end
@@ -109,14 +107,12 @@ classdef LinearRegressionModel < matlab.mixin.SetGet
             theta1_vals = linspace(0, 2, 100);
             
             [X,Y] = meshgrid(theta0_vals, theta1_vals);
-            Z = ones(length(theta0_vals), length(theta1_vals));
+            Z = ones(length(theta1_vals), length(theta0_vals));
             
             for i=1:length(theta1_vals)
                 for k=1:length(theta0_vals)
                     obj.setTheta(theta0_vals(k), theta1_vals(i))
-                    
                     Z(i,k) = obj.costFunction;
-
                 end
             end
 
@@ -154,10 +150,9 @@ classdef LinearRegressionModel < matlab.mixin.SetGet
            %
            h = obj.showTrainingData();
            hold on;
-           x = min(obj.trainingData.feature):max(obj.trainingData.feature);
-           final = obj.thetaOptimum(2) * x  + obj.thetaOptimum(1);
-           plot(x,final, 'b-');
-           legend('Linear Regression Model')
+           
+           plot(obj.trainingData.feature,obj.hypothesis, 'b-');
+           legend('Training Data','Linear Regression Model')
         end
         
         function setTheta(obj,theta0,theta1)

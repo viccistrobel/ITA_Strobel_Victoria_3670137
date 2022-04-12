@@ -29,7 +29,6 @@ classdef GradientDescentOptimizer < matlab.mixin.SetGet
                     obj.learningRate = varargin{i+1};
                 elseif strcmp(varargin{i},'MaxIterations')
                     obj.maxIterations = varargin{i+1};
-                
                 end
             end
         end
@@ -49,9 +48,8 @@ classdef GradientDescentOptimizer < matlab.mixin.SetGet
                       
             % optimization loop
             for i=1:maxIters
-                theta = theta - alpha * (1/m) * (X'*(X*theta - y));
-
-                linearRegressionModel.setTheta(theta(1), theta(2))
+                theta = theta - alpha * (1 / m) * (X' * (X * theta - y));
+                linearRegressionModel.setTheta(theta(1), theta(2));
                 costOverIters(i) =  linearRegressionModel.costFunction();
             end
             
