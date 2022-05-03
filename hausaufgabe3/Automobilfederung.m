@@ -72,8 +72,8 @@ classdef Automobilfederung < handle
                 end
                 % calculate the slopes
                 k1 = obj.rhs(t, y);
-                k2 = obj.rhs(t+.5*h, y+.5*k1*h);
-                k3 = obj.rhs(t+.5*h, y+.5*k2*h);
+                k2 = obj.rhs(t+0.5*h, y+0.5*k1*h);
+                k3 = obj.rhs(t+0.5*h, y+0.5*k2*h);
                 k4 = obj.rhs(t+h, y+k3*h);
                 % calculate the ynew
                 ynew = y+((k1+2*k2+2*k3+k4)/6)*h;
@@ -109,8 +109,8 @@ classdef Automobilfederung < handle
             obj.B = [0;0;0;obj.c1/obj.m1];
         end
         function calcSystemMartixA(obj)
-            obj.A = [0, 1, 0, 0; 
-                -obj.c2/obj.m2, -obj.d2/obj.m2, obj.c2/obj.m2, obj.d2/obj.m2; 
+            obj.A = [0, 1, 0, 0;
+                -obj.c2/obj.m2, -obj.d2/obj.m2, obj.c2/obj.m2, obj.d2/obj.m2;
                 0,0,0,1;
                 obj.c2/obj.m1, obj.d2/obj.m1, -(obj.c1+obj.c2)/obj.m1, -obj.d2/obj.m1];
         end
