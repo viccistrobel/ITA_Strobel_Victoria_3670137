@@ -58,6 +58,8 @@ classdef Automobilfederung < handle
                     y = varargin{i+1};
                 elseif strcmp(varargin{i},'stepsize')
                     h = varargin{i+1};
+                else
+                    warning("Invalid property: "+varargin{i});
                 end
             end
             tout = zeros(ceil((tfinal-t)/h)+1,1);
@@ -109,7 +111,7 @@ classdef Automobilfederung < handle
             obj.B = [0;0;0;obj.c1/obj.m1];
         end
         function calcSystemMartixA(obj)
-            obj.A = [0, 1, 0, 0;
+            obj.A = [0,1,0,0;
                 -obj.c2/obj.m2, -obj.d2/obj.m2, obj.c2/obj.m2, obj.d2/obj.m2;
                 0,0,0,1;
                 obj.c2/obj.m1, obj.d2/obj.m1, -(obj.c1+obj.c2)/obj.m1, -obj.d2/obj.m1];
